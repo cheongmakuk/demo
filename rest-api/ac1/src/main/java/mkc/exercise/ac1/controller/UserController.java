@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import mkc.exercise.ac1.model.out.Meta;
 import mkc.exercise.ac1.service.SearchCriteria;
 import mkc.exercise.ac1.service.UserService;
 
@@ -48,7 +49,9 @@ public class UserController {
 			userService.init();
 			resultString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(userService.findAllUsers(filterParams, sortBy));
 		}catch(Exception e) {
-			resultString ="Exception caught:" +e.getMessage();
+			System.out.println("Exception caught:" +e.getMessage());
+			resultString = UserService.createServerErrorResponse(Meta.STATUS_CODE_SERVER_ERROR);
+			
 		}
 		
 		return resultString;
@@ -63,7 +66,8 @@ public class UserController {
 			userService.init();
 			resultString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(userService.findSingleUserWithAge(id));
 		}catch(Exception e) {
-			resultString ="Exception caught:" +e.getMessage();
+			System.out.println("Exception caught:" +e.getMessage());
+			resultString = UserService.createServerErrorResponse(Meta.STATUS_CODE_SERVER_ERROR);
 		}
 		
 		return resultString;

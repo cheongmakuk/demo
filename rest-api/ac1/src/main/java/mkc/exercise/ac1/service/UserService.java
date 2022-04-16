@@ -230,6 +230,15 @@ public class UserService {
 		return meta;
 	}
 	
+	public static String createServerErrorResponse(int errorCode) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("{\"meta\":{\"total\":0,\"count\":0,\"page\":0,\"totalPages\":0,\"statusCode\":")
+		.append(errorCode).append(",\"contentType\":\"")
+		.append(Meta.CONTENT_TYPE_JSON)
+		.append("\"},\"data\":null}");
+		return sb.toString();		
+	}
+	
 	//-- Utility --//
 	private boolean isNumeric(final String str) {
         try {
