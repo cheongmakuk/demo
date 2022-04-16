@@ -255,40 +255,40 @@ Retrieve single user by id. The age field is added.
     
 #### Response sample
 
-  {
-    "meta" : 
-    {
-      "total" : 12,
-      "count" : 1,
-      "page" : 1,
-      "totalPages" : 2,
-      "statusCode" : 200,
-      "contentType" : "application/json"
-    },
-    "data" : 
-    {
-      "id" : 1,
-      "email" : "george.bluth@reqres.in",
-      "firstName" : "George",
-      "lastName" : "Bluth",
-      "avatar" : "https://reqres.in/img/faces/1-image.jpg",
-      "age" : 24
-     }
-  }
+	{
+	   "meta" : 
+	   {
+		"total" : 12,
+		"count" : 1,
+		"page" : 1,
+		"totalPages" : 2,
+		"statusCode" : 200,
+		"contentType" : "application/json"
+	   },
+	   "data" : 
+	   {
+	   	"id" : 1,
+	      	"email" : "george.bluth@reqres.in",
+	      	"firstName" : "George",
+	      	"lastName" : "Bluth",
+	      	"avatar" : "https://reqres.in/img/faces/1-image.jpg",
+	      	"age" : 24
+	   }
+	}
     
 ### Error Response
 
 The error response for internal server error
 
-  {
-      "meta:
-      {
-        "total":0,
-        "count":0,
-        "page":0,
-        "totalPages":0,
-        "statusCode":500,
-        "contentType":"application/json"
-      },
-      "data" : null
-   }
+	{
+	   "meta:
+	   {
+		"total":0,
+		"count":0,
+		"page":0,
+		"totalPages":0,
+		"statusCode":500,
+		"contentType":"application/json"
+	   },
+	   "data" : null
+   	}
